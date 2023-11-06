@@ -4,6 +4,12 @@
   --title: "Fira Sans Condensed", sans-serif; /* 300, 400, 900 */
   --paragraph: "PT Sans", sans-serif;
   --logo: "Secular One", sans-serif;
+
+  --green: #c4e86c;
+  --red: #ff4747;
+  --orange: #ffb548;
+  --aqua: #01bcb5;
+  --aqua-active: #44a7a2;
 }
 
 body {
@@ -16,3 +22,87 @@ body {
   min-width: 1920px;
   margin: 0 auto;
 }
+
+/* -------------------------------- HEADER -------------------------------- */
+.header {
+  display: grid;
+  grid-template-rows: max-content;
+  grid-template-columns: 1fr 1fr 100px;
+  grid-template-areas: "logo nav search";
+  align-items: center;
+  justify-items: start;
+
+  padding: 20px 0;
+
+  text-transform: uppercase;
+
+  overflow: hidden;
+}
+
+.header__logo-wrapper {
+  grid-area: logo;
+  justify-self: end;
+}
+
+.logo {
+  font-family: var(--logo);
+  font-weight: 400;
+  color: var(--red);
+  font-size: 24px;
+  width: 150px;
+  line-height: 1;
+}
+
+.header__nav {
+  grid-area: nav;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: 10px;
+}
+
+.header__nav a {
+  display: inline-block;
+  position: relative;
+
+  padding: 15px;
+  transition: color 0.2s;
+}
+
+.header__nav a:hover,
+.logo:hover {
+  color: var(--aqua);
+}
+
+.header__nav a:active {
+  color: var(--aqua-active);
+}
+
+.header__nav a::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 100%;
+
+  background-color: var(--aqua);
+  position: absolute;
+  left: 15px;
+  bottom: -200%;
+
+  transition: bottom 0.5s, background-color 0.2s;
+}
+
+.header__nav a:hover::after {
+  bottom: -80%;
+}
+
+.header__nav a:active::after {
+  background-color: var(--aqua-active);
+}
+
+.header__search {
+  grid-area: search;
+}
+
+/* -------------------------------- MAIN -------------------------------- */
