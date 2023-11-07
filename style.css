@@ -47,8 +47,8 @@ body {
 .header {
   display: grid;
   grid-template-rows: max-content;
-  grid-template-columns: 1fr 1fr 100px;
-  grid-template-areas: "logo nav search";
+  grid-template-columns: 2fr 1fr 2.5fr 0.5fr;
+  grid-template-areas: ". logo nav search";
   align-items: center;
   justify-items: start;
 
@@ -61,7 +61,6 @@ body {
 
 .header__logo-wrapper {
   grid-area: logo;
-  justify-self: end;
 }
 
 .logo {
@@ -75,6 +74,7 @@ body {
 
 .header__nav {
   grid-area: nav;
+  transform: translate(-15px);
 }
 
 .header__nav ul {
